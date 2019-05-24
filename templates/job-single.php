@@ -14,5 +14,13 @@
     <br><br>
     <a href="index.php">Voltar</a>
     <br><br>
+    <div class="well">
+        <a href="edit.php?id=<?php echo $job->id_job; ?>" class="btn btn-primary">Edit</a>
+
+        <form action="job.php" method="post" style="display:inline;">
+            <input type="hidden" name="del_id" value="<?php echo $job->id_job; ?>">
+            <input type="submit" class="btn btn-danger" value="Delete">
+        </form>
+    </div>
 </div> <!-- /container -->
 <?php include 'includes/footer.php';?>

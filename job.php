@@ -5,6 +5,17 @@ include_once 'config/init.php'; ?>
 <?php
 $job = new Job;
 
+//Deletar
+if(isset($_POST['del_id'])){
+    $del_id = $_POST['del_id'];
+    if($job->delete($del_id)){
+        redirect('index.php', 'Job Delete', 'success');
+    } else {
+        redirect('index.php', 'Job Not Delete', 'error');
+
+    }
+}
+
 $template = new Template('templates/job-single.php');
 
 //condicional se tiver escolhido uma categoria atribiu senao deixa null

@@ -14,7 +14,7 @@ if($category){
     $template->jobs = $job->getByCategory($category);
     $template->title = 'Trabalhos em ' . $job->getCategory($category)->name;
 } else {
-    $template->title = 'Latest Jobs';
+    $template->title = 'Ultimas Vagas';
     $template->jobs = $job->getAllJobs();
 }
 
